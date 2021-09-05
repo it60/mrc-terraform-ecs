@@ -3,6 +3,9 @@
 ## Description
 ECS Terraform and pipeline workflow
 
+## Architecture
+![Architecture](./Architecture.png)
+
 ## Completed
 ECS module
 
