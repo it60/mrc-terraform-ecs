@@ -1,0 +1,29 @@
+[
+  {
+    "name": "${task_definition_name}",
+    "image": "${src_ecr_repo_account}.dkr.ecr.${src_ecr_region}.amazonaws.com/${docker_image}:${docker_tag_version}",
+    "essential": true,
+    "portMappings": [{
+      "containerPort": ${docker_container_port},
+      "protocol": "tcp"
+    }],
+    "environment": [
+      {
+        "name": "ManagedBy",
+        "value": "${managed_by}"
+      },
+      {
+        "name": "Environment",
+        "value": "${env}"
+      }
+    ],
+   "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "${ecs_service_name}-LogGroup",
+        "awslogs-region": "${aws_region}",
+        "awslogs-stream-prefix": "${ecs_service_name}-LogGroup-stream"
+      }
+    }
+  }
+]
