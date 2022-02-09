@@ -13,7 +13,8 @@ phases:
 
   pre_build:
     commands:
-      - cd s3-dynamodb-backend
+      - echo $PWD
+      - cd mrc-terraform-ecs/s3-dynamodb-backend
       - terraform init
       - terraform validate
   
