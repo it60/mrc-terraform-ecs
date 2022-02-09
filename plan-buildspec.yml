@@ -17,6 +17,7 @@ phases:
     commands:
       - echo $PWD
       - ls -la
+      - cd s3-dynamodb-backend
       - /usr/bin/terraform init
       - terraform validate
   
