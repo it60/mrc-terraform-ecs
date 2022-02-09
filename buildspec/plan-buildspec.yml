@@ -13,11 +13,13 @@ phases:
 
   pre_build:
     commands:
+      - cd s3-dynamodb-backend
       - terraform init
       - terraform validate
   
   build:
     commands:
+      - s3-dynamodb-backend
       - terraform plan
       
   post_build:
